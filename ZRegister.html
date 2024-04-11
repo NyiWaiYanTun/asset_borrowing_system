@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="/public/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+        </div>
+
+        <div class="scrollable row">
+          <div class="reg-container container-fluid mt-3">
+            <h2>User Registration</h2>
+            <form id="registrationForm">
+                <div id="previewArea">
+                    <img src="/public/img/no-photo.jpg" class="preview img-thumbnail">
+                </div>
+                <div class="mb-1">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-1">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-1">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <div class="mb-1">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                </div>
+                <div class="mb-1">
+                    <label for="photo" class="form-label" id="regUpload"><img src="/public/img/uploadProfile.png" alt=""> Upload Photo</label>
+                    <input type="file" name="image" class="form-control d-none" id="photo" accept="image/*">
+                </div>
+                <div id="message" class="mb-3 text-danger"></div>
+                <button type="button" class="btn btn-primary" id="register">Register</button>
+                <button type="button" class="btn btn-dark" id="cancel">Cancel</button>
+                <button type="button" class="btn btn-danger" id="removePhoto">Remove Photo</button>
+            </form>
+        </div>
+        </div>
+        <script src="/public/bootstrap.bundle.min.js"></script>
+        <script src="/public/sweetalert2@11.js"></script>
+        <script src="/public/scripts/Register.js"></script>
+</body>
+
+</html>

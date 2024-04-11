@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+            <div class="col-1 text-end">
+                <a href="#"><img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogo"></a>
+                <div class="sub-menu-wrap">
+                    <div class="sub-menu rounded text-start">
+                        <div class="user-info">
+                            <img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogoBig">
+                            <h3 id="profileName"></h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="/public/img/gmail.png" class="my-0">
+                            <p id="profileEmail"></p>
+                        </a>
+                        <a href="/LecturerProfile" class="sub-menu-link">
+                            <img src="/public/img/editProfile.png" class="my-0">
+                            <p><b>Edit profile</b></p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scrollable row">
+            <div class="nav col-md-3 col-lg-2 bg-muted shadow-lg">
+                <ul class="link-container">
+                    <a href="/LecturerDashboard">
+                        <li>
+                            <img src="/public/img/dashboard.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Dashboard</span>
+                        </li>
+                    </a>
+                    <a href="/LecturerAssetList">
+                        <li>
+                            <img src="/public/img/assetlist.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Asset List</span>
+                        </li>
+                    </a>
+                    <a href="/LecturerBorrowRequest">
+                        <li>
+                            <img src="/public/img/borroweditems.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Borrow request</span>
+                        </li>
+                    </a>
+                    <a href="/LecturerHistory">
+                        <li>
+                            <img src="/public/img/history.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">History</span>
+                        </li>
+                    </a>
+                    <button class="btn btn-dark rounded" id="logout">Log out</button>
+                </ul>
+            </div>
+
+            <div class="content col-md-9 col-lg-10">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <h2>Edit Profile</h2>
+                            <div id="photoContainer" class="text-center my-4">
+                                <img src="/public/img/no-photo.jpg" id="currentPhoto"
+                                    class="profile-img img-fluid rounded-circle img-thumbnail" alt="Current Profile Photo" id="profileLogoBig2">
+                            </div>
+                            <form id="editProfileForm">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control-file d-none" id="photo">
+                                        <label for="photo" id="uploadLogo"><img
+                                                src="/public/img/uploadProfile.png"></label>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="name"><b>Name</b></label>
+                                    <input type="text" class="form-control mt-1" id="name"
+                                        value="" id="profileName2">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="email"><b>Email: </b></label>
+                                    <input type="text" class="form-control mt-1" id="email"
+                                        value="" disabled id="profileEmail2">
+                                </div>
+                                <div class="form-group mt-4">
+                                    <a href="#" id="changePassword"  data-bs-toggle="modal" data-bs-target="#modalId">ChangePassword</a>
+                                    <a href="#" id="forgotPassword" class="text-danger ms-3">ForgotPassword?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+                                <button type="button" class="btn btn-danger mt-3" id="removePhoto">Remove Photo</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                        Change Password
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="password" class="form form-control my-3" id="old" placeholder="Enter old password" required>
+                    <input type="password" class="form form-control my-3" id="old" placeholder="Enter new password" required>
+                    <input type="password" class="form form-control my-3" id="old" placeholder="Confirm password" required>   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self-written js files -->
+    <script src="/public/bootstrap.bundle.min.js"></script>
+    <script src="/public/jquery-3.7.1.min.js"></script>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public/scripts/profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requested items</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+            <div class="col-1 text-end">
+                <a href="#"><img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogo"></a>
+                <div class="sub-menu-wrap">
+                    <div class="sub-menu rounded text-start">
+                        <div class="user-info">
+                            <img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogoBig">
+                            <h3 id="profileName"></h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="/public/img/gmail.png" class="my-0">
+                            <p id="profileEmail"></p>
+                        </a>
+                        <a href="/StudentProfile" class="sub-menu-link">
+                            <img src="/public/img/editProfile.png" class="my-0">
+                            <p><b>Edit profile</b></p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row scrollable">
+            <div class="nav col-md-3 col-lg-2 bg-muted shadow-lg">
+                <ul class="link-container">
+                    <a href="/StudentHome">
+                        <li>
+                            <img src="/public/img/home-button.png" alt="Home Button" width="20px"> <span
+                                class="fs-45">Home</span>
+                        </li>
+                    </a>
+                    <a href="/StudentAssetList">
+                        <li>
+                            <img src="/public/img/assetlist.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Asset List</span>
+                        </li>
+                    </a>
+                    <a href="/StudentRequestedItem">
+                        <li style="background-color: #D1D1D1;">
+                            <img src="/public/img/requesteditems.png" alt="Requested items" width="20px"> <span
+                                class="fs-5">Requested items</span>
+                        </li>
+                    </a>
+                    <a href="/StudentHistory">
+                        <li>
+                            <img src="/public/img/history.png" alt="History" width="20px"> <span
+                                class="fs-5">History</span>
+                        </li>
+                    </a>
+                    <button class="btn btn-dark rounded" id="logout">Log out</button>
+                </ul>
+            </div>
+
+            <div class="content col-md-9 col-lg-10">
+                <div class=" row d-flex my-2">
+                    <div class="col"><label for="searchTerm">Search Term</label>
+                        <input type="text" class="form-control" id="searchTerm" placeholder="Search">
+                    </div>
+                    <div class="col">
+                        <label for="searchBy">Search By</label>
+                        <select class="form-control" id="searchBy">
+                            <option value="id">Asset ID</option>
+                            <option value="name">Asset name</option>
+                            <option value="type">Asset type</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row d-flex my-3">
+                    <div class="col">
+                        <label for="borrowDate">Borrow Date (Optional)</label>
+                        <input type="date" class="form-control" id="borrowDate">
+                    </div>
+                    <div class="col">
+                        <label for="returnDate">Return Date (Optional)</label>
+                        <input type="date" class="form-control" id="returnDate">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Search</button>
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <th> Asset ID</th>
+                        <th> Asset Name</th>
+                        <th> Asset Type</th>
+                        <th>Borrowed date</th>
+                        <th>Returned date</th>
+                        <th> Status</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public/scripts/StudentRequestedItem.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+            <div class="col-1 text-end">
+                <a href="#"><img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogo"></a>
+                <div class="sub-menu-wrap">
+                    <div class="sub-menu rounded text-start">
+                        <div class="user-info">
+                            <img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogoBig">
+                            <h3 id="profileName"></h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                          <img src="/public/img/gmail.png" class="my-0">
+                          <p id="profileEmail"></p>
+                      </a>
+                        <a href="/StaffProfile" class="sub-menu-link">
+                            <img src="/public/img/editProfile.png" class="my-0">
+                            <p><b>Edit profile</b></p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row scrollable">
+            <div class="nav col-md-3 col-lg-2 bg-muted shadow-lg">
+                <ul class="link-container">
+                    <a href="/StaffDashboard">
+                        <li style="background-color: #D1D1D1;">
+                            <img src="/public/img/dashboard.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Dashboard</span>
+                        </li>
+                    </a>
+                    <a href="/StaffAssetList">
+                        <li>
+                            <img src="/public/img/assetlist.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Asset List</span>
+                        </li>
+                    </a>
+                    <a href="/StaffReturnItem">
+                        <li>
+                            <img src="/public/img/returnitems.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Return Item</span>
+                        </li>
+                    </a>
+                    <a href="/StaffTakeOutItem">
+                        <li>
+                            <img src="/public/img/takeout.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Take out Item</span>
+                        </li>
+                    </a>
+                    <a href="/StaffHistory">
+                        <li>
+                            <img src="/public/img/history.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">History</span>
+                        </li>
+                    </a>
+                    <button class="btn btn-dark rounded" id="logout">Log out</button>
+                </ul>
+            </div>
+            <div class="content col-md-9 col-lg-10">
+                
+                <div class="container">
+                    <!-- First Row: Asset Cards -->
+                    <div class="row">
+                            <div class="d-flex justify-content-between">
+                                <div class="border">
+                                    <img src="/public/img/laptop.avif" class="cardImg" alt="Laptops" height="150px" width="150px">
+                                    <div class="p-3">
+                                        <h5 class="card-title">Laptops</h5>
+                                        <p class="card-text">Total: 50</p>
+                                    </div>
+                                </div>
+                                <div class="border">
+                                    <img src="/public/img/ipad.jpg" class="cardImg" alt="iPads" height="150px" width="150px">
+                                    <div class="p-3">
+                                        <h5 class="card-title">iPads</h5>
+                                        <p class="card-text">Total: 20</p>
+                                    </div>
+                                </div>
+                                <div class="border">
+                                    <img src="/public/img/book.jpg" class="cardImg" alt="Books" height="150px" width="150px">
+                                    <div class="p-3">
+                                        <h5 class="card-title">Books</h5>
+                                        <p class="card-text">Total: 30</p>
+                                    </div>
+                                </div>
+                                <div class="border">
+                                    <img src="/public/img/electronic.webp" class="cardImg" alt="Electronics" height="150px" width="150px">
+                                    <div class="p-3">
+                                        <h5 class="card-title">Electronics</h5>
+                                        <p class="card-text">Total: 10</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <hr>
+            
+                    <!-- Second Row: Bar Chart -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="barChartContainer"></div>
+                        </div>
+                    </div>
+                    <hr>
+            
+                    <!-- Third Row: Pie Chart with Dropdown -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="div row">
+                                <div class="form-group">
+                                    <label for="assetTypeSelect">Select Asset Type:</label>
+                                    <select class="form-control" id="assetTypeSelect">
+                                        <option value="all">All Assets</option>
+                                        <option value="laptops">Laptops</option>
+                                        <option value="ipads">iPads</option>
+                                        <option value="books">Books</option>
+                                        <option value="electronics">Electronics</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="piechartNumbers" class="ms-5 mt-5">
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="pieChartContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+    </div>
+    <script src="/public/highcharts.js"></script>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public/scripts/Dashboard.js"></script>
+</body>
+
+</html>

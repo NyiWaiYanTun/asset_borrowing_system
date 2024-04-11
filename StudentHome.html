@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+            <div class="col-1 text-end">
+                <a href="#"><img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogo"></a>
+                <div class="sub-menu-wrap">
+                    <div class="sub-menu rounded text-start">
+                        <div class="user-info">
+                            <img src="/public/img/no-photo.jpg" width="50px" height="50px" id="profileLogoBig">
+                            <h3 id="profileName"></h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="/public/img/gmail.png" class="my-0">
+                            <p id="profileEmail"></p>
+                        </a>
+                        <a href="/StudentProfile" class="sub-menu-link">
+                            <img src="/public/img/editProfile.png" class="my-0">
+                            <p><b>Edit profile</b></p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scrollable row">
+            <div class="nav col-md-3 col-lg-2 bg-muted shadow-lg">
+                <ul class="link-container">
+                    <a href="/StudentHome" >
+                        <li style="background-color: #D1D1D1;">
+                            <img src="/public/img/home-button.png" alt="Home Button" width="20px"> <span
+                                class="fs-45">Home</span>
+                        </li>
+                    </a>
+                    <a href="/StudentAssetList">
+                        <li>
+                            <img src="/public/img/assetlist.png" alt="Asset Lists" width="20px"> <span
+                                class="fs-5">Asset List</span>
+                        </li>
+                    </a>
+                    <a href="/StudentRequestedItem">
+                        <li>
+                            <img src="/public/img/requesteditems.png" alt="Requested items" width="20px"> <span
+                                class="fs-5">Requested items</span>
+                        </li>
+                    </a>
+                    <a href="/StudentHistory">
+                        <li>
+                            <img src="/public/img/history.png" alt="History" width="20px"> <span
+                                class="fs-5">History</span>
+                        </li>
+                    </a>
+                    <button class="btn btn-dark rounded" id="logout">Log out</button>
+                </ul>
+            </div>
+
+            <div class="content col-md-9 col-lg-10">
+                <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="c-item carousel-item active">
+                            <img src="/public/img/1.jpg" class="c-image d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <b>
+                                    <h1>Asset Borrowing System</h1>
+                                    <p>Web Application Project by Group 3</p>
+                                </b>
+                              </div>
+                        </div>
+                        <div class="c-item carousel-item">
+                            <img src="/public/img/2.jpg" class="c-image d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <b>
+                                    <h1>Asset Borrowing System</h1>
+                                    <p>Web Application Project by Group 3</p>
+                                </b>
+                              </div>
+                        </div>
+                        <div class="c-item carousel-item">
+                            <img src="/public/img/3.webp" class="c-image d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <b>
+                                    <h1>Asset Borrowing System</h1>
+                                    <p>Web Application Project by Group 3</p>
+                                </b>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- links to other pages -->
+                <div class="row">
+                    <div class="d-flex justify-content-between">
+                        <a href="/StudentAssetList"class='homeLink'>
+                            <div class="border">
+                                <img src="/public/img/homeAssetList.jpg" class="cardImg" alt="Laptops" height="150px" width="150px">
+                                <div class="p-3">
+                                    <h5 class="card-title">View asset list</h5>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/StudentRequestedItem" class='homeLink'>
+                            <div class="border">
+                                <img src="/public/img/approved.jpg" class="cardImg" alt="iPads" height="150px" width="150px">
+                                <div class="p-3">
+                                    <h5 class="card-title">Requested items' status</h5>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/StudentHistory" class='homeLink'>
+                            <div class="border">
+                                <img src="/public/img/homeHistory.jpg" class="cardImg" alt="Books" height="150px" width="150px">
+                                <div class="p-3">
+                                    <h5 class="card-title">View history</h5>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/StudentProfile" class='homeLink'>
+                            <div class="border">
+                                <img src="/public/img/homeProfile.png" class="cardImg" alt="Books" height="150px" width="150px">
+                                <div class="p-3">
+                                    <h5 class="card-title">View my profile</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+                <!-- news carousel and cards-->
+                <div id="carouselExampleControls" class="carousel slide mt-5 mb-2" data-bs-ride="carousel">
+                    <h1>What's new?</h1>
+                    <hr class="py-2 bg-danger my-3">
+                    <div class="news-inner carousel-inner">
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/1.jpg" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/2.jpg" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/3.webp" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/1.jpg" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/2.jpg" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/3.webp" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/1.jpg" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/2.jpg" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-item carousel-item">
+                            <div class="card">
+                                <div class="img-wrapper"><img src="/public/img/3.webp" alt="..."></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">News title</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- Self-written js files -->
+    <script src="/public/bootstrap.bundle.min.js"></script>
+    <script src="/public/jquery-3.7.1.min.js"></script>
+    <script src="/public/scripts/global.js"></script>
+    <script src="/public/scripts/StudentHome.js"></script>
+</body>
+
+</html>

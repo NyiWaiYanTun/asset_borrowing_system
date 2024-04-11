@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/global.css">
+    <script src="/public/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header row bg-muted shadow py-3 px-1 sticky-top">
+            <!-- Nav toggle and Heading -->
+            <div class="col-11 d-flex">
+                <a href="#"><img src="/public/img/list.png" alt="nav lists" id="nav-toggle"></a>
+                <h2 class="py-2">Asset Borrowing System</h2>
+            </div>
+            <!-- Profile pic -->
+        </div>
+
+        <div class="scrollable row">
+            <div class="container">
+                <div class="row login-container">
+                    <div class="col-md-3">
+                        <div class="text-center mb-4">
+                            <img src="/public/img/Staff.png" alt="Logo" class="login-logo">
+                            <h3>Staff Login</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="login-form-container">
+                            <h2 class="text-center mb-4">Login</h2>
+                                <div class="form-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Enter email" id="email">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Enter password" id="password">
+                                </div>
+                                <div class="text-danger mb-2" id="message"></div>
+                                <button class="btn btn-primary" id="login"> Login </button>
+                                <input type="checkbox" id="remember"><label for="remember" class="me-3">Remember me</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/public/scripts/StaffLogin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Modal with Different Content</title>
+    <!-- Bootstrap CSS -->
+    <link href="/public/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Modal trigger button -->
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId" onclick="showModal('/public/img/joey.webp', 'Joey')">
+        Launch-1
+    </button>
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId" id="Launch-2" onclick="showModal('/public/img/ross.jpg', 'Ross')">
+        Launch-2
+    </button>
+
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                       
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="img" id="modalImageId" height="250px" width="100%" style="object-fit: cover; object-position: center;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                    <!-- <button type="button" class="btn btn-primary">Save</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/bootstrap.bundle.min.js"></script>
+    <script>
+    function showModal(img, title){
+        document.querySelector('#modalTitleId').innerHTML= title;
+        document.querySelector('#modalImageId').src= img;
+    }
+    </script>
+</body>
+
+</html>
